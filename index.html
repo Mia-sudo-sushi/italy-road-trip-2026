@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f3ed">
+  <title>Italy Road Trip · 2026</title>
+  <style>
+    :root{--bg:#f6f3ed;--card:#fff;--ink:#202124;--muted:#747474;--line:#e6e1d8;--soft:#efebe4;--red:#a8392d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif}
+    main{max-width:980px;margin:auto;padding:28px 18px 70px}.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+    h1{font-family:Georgia,serif;font-size:clamp(34px,7vw,62px);line-height:1;margin:9px 0 10px}.subtitle{color:var(--muted);line-height:1.5}
+    .status{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.chip,.nav a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 12px;font-size:13px;text-decoration:none;color:inherit}
+    .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 30px rgba(0,0,0,.035)}
+    .label{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.next-title{font-size:25px;font-weight:750;margin:10px 0 4px}.meta{color:var(--muted)}
+    #countdown{font-size:clamp(35px,7vw,58px);font-weight:750;letter-spacing:-.045em;margin-top:32px;font-variant-numeric:tabular-nums}.tiny{font-size:12px;color:var(--muted);margin-top:5px}
+    .route{font-family:Georgia,serif;font-size:22px;line-height:1.55;margin-top:10px}.nav{display:flex;gap:8px;overflow:auto;padding:18px 0 4px;position:sticky;top:0;background:linear-gradient(var(--bg) 75%,transparent);z-index:2}
+    section{scroll-margin-top:70px;margin-top:26px}h2{font-family:Georgia,serif;font-size:27px;margin:0 0 12px}.day{background:#fff;border:1px solid var(--line);border-radius:18px;margin:12px 0;overflow:hidden}
+    .dayhead{padding:16px 18px;background:#fbfaf7}.daytitle{font-weight:750;font-size:18px}.date{color:var(--muted);font-size:13px;margin-top:3px}.event{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}
+    .time{font-weight:700;font-variant-numeric:tabular-nums}.placeholder{color:var(--muted);font-style:italic}.check{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}input{accent-color:var(--red)}
+    .warning{background:#fff8e8;border:1px solid #ead8a7;border-radius:15px;padding:14px;line-height:1.5}.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:34px}
+    @media(max-width:700px){main{padding-top:20px}.hero-grid{grid-template-columns:1fr}.event{grid-template-columns:58px 1fr}.nav{margin-left:-18px;margin-right:-18px;padding-left:18px;padding-right:18px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="kicker">Italy Road Trip · 2026</div>
+    <h1>Rome → Florence → Venice → Dolomites → Milan</h1>
+    <div class="subtitle">25 September – 4 October · 10 days · shared travel dashboard</div>
+    <div class="status">
+      <span class="chip">✈️ Flights</span><span class="chip">🚗 Rental car</span><span class="chip">🏨 Hotels</span><span class="chip">🎟️ Bookings</span>
+    </div>
+  </header>
+
+  <div class="hero-grid">
+    <div class="card">
+      <div class="label">● Up next</div>
+      <div id="nextTitle" class="next-title">Italy Road Trip begins</div>
+      <div id="nextMeta" class="meta">Rome · 25 Sep</div>
+      <div id="countdown">--d --:--:--</div>
+      <div class="tiny">Automatically updates to the next scheduled event.</div>
+    </div>
+    <div class="card">
+      <div class="label">Trip overview</div>
+      <div class="route">Rome<br>↓ Florence<br>↓ Padova / Venice<br>↓ Dolomites<br>↓ Milan</div>
+      <div class="tiny">Detailed route map will be added once the daily plan is confirmed.</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="#overview">🗺 Overview</a><a href="#transport">✈️ Transport</a><a href="#days">📅 Daily itinerary</a><a href="#checklist">✅ Checklist</a><a href="#tips">💡 Tips</a>
+  </nav>
+
+  <section id="overview">
+    <h2>Trip overview</h2>
+    <div class="card">
+      <strong>Road-trip structure</strong>
+      <p class="meta">Rome city stay → collect the car → Florence → overnight in Padova → Venice by public transport → Dolomites → Milan.</p>
+      <div class="warning">⚠️ Before the final itinerary is published, driving times, ZTL restrictions, parking, attraction opening days and advance-booking requirements will be checked.</div>
+    </div>
+  </section>
+
+  <section id="transport">
+    <h2>Transport & bookings</h2>
+    <div class="card">
+      <div class="placeholder">Flight, hotel, rental-car and confirmed ticket details will appear here as booking screenshots are added.</div>
+    </div>
+  </section>
+
+  <section id="days">
+    <h2>Daily itinerary</h2>
+    <div id="timeline"></div>
+  </section>
+
+  <section id="checklist">
+    <h2>Checklist</h2>
+    <div class="card">
+      <div class="tiny">Saved only in this browser/device. Friends have their own checklist state.</div>
+      <label class="check"><input type="checkbox" data-check="flights"> Confirm flight details</label>
+      <label class="check"><input type="checkbox" data-check="car"> Add rental-car booking</label>
+      <label class="check"><input type="checkbox" data-check="hotels"> Add all hotels</label>
+      <label class="check"><input type="checkbox" data-check="tickets"> Add attraction / cable-car tickets</label>
+      <label class="check"><input type="checkbox" data-check="parking"> Confirm parking & ZTL plan</label>
+    </div>
+  </section>
+
+  <section id="tips">
+    <h2>Trip notes</h2>
+    <div class="card meta">Practical notes for ZTL zones, parking, toll roads, cable cars, weather, reservations and driving will be added here.</div>
+  </section>
+
+  <div class="footer">Last updated · 9 September 2026 · Public trip page — keep passport numbers, booking references and payment details private.</div>
+</main>
+<script>
+const events=[
+ {t:"2026-09-25T00:00:00+02:00",title:"Italy Road Trip begins",meta:"Rome"},
+ {t:"2026-09-28T10:00:00+02:00",title:"Pick up rental car",meta:"Rome"},
+ {t:"2026-09-28T10:30:00+02:00",title:"Drive towards Florence",meta:"Rome → Florence"},
+ {t:"2026-09-29T09:00:00+02:00",title:"Venice day trip",meta:"Padova → Venice"},
+ {t:"2026-09-29T19:00:00+02:00",title:"Head to the Dolomites",meta:"Venice area → Dolomites"},
+ {t:"2026-10-03T12:00:00+02:00",title:"Drive to Milan",meta:"Dolomites → Milan"}
+];
+const days=[
+ ["Fri · 25 Sep","Rome",[["—","Arrival details to add"],["—","Rome plans / hotel to add"]]],
+ ["Sat · 26 Sep","Rome",[["—","Rome itinerary to add"]]],
+ ["Sun · 27 Sep","Rome",[["—","Rome itinerary to add"]]],
+ ["Mon · 28 Sep","Rome → Florence → Padova",[["10:00","Pick up rental car"],["10:30","Drive towards Florence"],["—","Florence itinerary to confirm"],["—","Continue to Padova & check in"]]],
+ ["Tue · 29 Sep","Venice → Dolomites",[["09:00","Travel to Venice"],["—","Explore Venice"],["19:00","Head towards the Dolomites"]]],
+ ["Wed · 30 Sep","Dolomites",[["—","Mountain itinerary to add"]]],
+ ["Thu · 1 Oct","Dolomites",[["—","Mountain itinerary to add"]]],
+ ["Fri · 2 Oct","Dolomites",[["—","Mountain itinerary to add"]]],
+ ["Sat · 3 Oct","Dolomites → Milan",[["12:00","Drive to Milan"],["—","Return car / Milan check-in to confirm"]]],
+ ["Sun · 4 Oct","Milan",[["—","Milan itinerary"],["—","Flight details to add"]]]
+];
+document.getElementById("timeline").innerHTML=days.map(d=>`<article class="day"><div class="dayhead"><div class="daytitle">${d[1]}</div><div class="date">${d[0]}</div></div>${d[2].map(x=>`<div class="event"><div class="time">${x[0]}</div><div class="${x[1].includes("add")||x[1].includes("confirm")?"placeholder":""}">${x[1]}</div></div>`).join("")}</article>`).join("");
+function tick(){
+ const now=Date.now(), next=events.find(e=>new Date(e.t).getTime()>now);
+ if(!next){document.getElementById("nextTitle").textContent="Trip complete ✨";document.getElementById("nextMeta").textContent="What a trip.";document.getElementById("countdown").textContent="00:00:00";return}
+ let ms=new Date(next.t).getTime()-now,d=Math.floor(ms/86400000);ms%=86400000;let h=Math.floor(ms/3600000);ms%=3600000;let m=Math.floor(ms/60000),s=Math.floor(ms%60000/1000);
+ document.getElementById("nextTitle").textContent=next.title;document.getElementById("nextMeta").textContent=next.meta;document.getElementById("countdown").textContent=(d?d+"d ":"")+[h,m,s].map(v=>String(v).padStart(2,"0")).join(":");
+}
+document.querySelectorAll("[data-check]").forEach(el=>{let k="italy26-"+el.dataset.check;el.checked=localStorage.getItem(k)==="1";el.onchange=()=>localStorage.setItem(k,el.checked?"1":"0")});
+tick();setInterval(tick,1000);
+</script>
+</body></html>
